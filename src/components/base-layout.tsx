@@ -1,7 +1,7 @@
 import BaseContainer from './base-container'
 import { ReactComponent as IconBookmarks } from '@/assets/icons/bookmarks.svg'
 import { Link, Outlet } from 'react-router-dom'
-import SearchInput from './search-input'
+import SearchInput from './search-form'
 
 type BaseLayoutProps = {
   children?: React.ReactNode
