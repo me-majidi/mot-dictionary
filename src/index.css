@@ -7,3 +7,12 @@
     font-family: 'Source Sans Pro', serif;
   }
 }
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #e5e9f2 0%,
+    rgba(229, 233, 242, 0.52) 100%
+  );
+  border-radius: theme('borderRadius.md');
+}

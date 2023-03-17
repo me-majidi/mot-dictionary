@@ -22,7 +22,7 @@ const BaseLayout = ({ children }: BaseLayoutProps) => {
       <BaseContainer className="mt-6">
         <SearchInput />
 
-        <main>{children ?? <Outlet />}</main>
+        <main className="py-8">{children ?? <Outlet />}</main>
       </BaseContainer>
     </div>
   )

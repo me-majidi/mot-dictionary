@@ -1,7 +1,10 @@
+import { lazy, Suspense } from 'react'
 import { createBrowserRouter, type RouteObject } from 'react-router-dom'
 import BaseLayout from './components/base-layout'
-import DefinitionPage from './pages/definition-page'
+import SearchSkeleton from './pages/definition-page/components/search-skeleton'
 import NotFoundPage from './pages/not-found-page'
+
+const LazyDefinitionPage = lazy(() => import('./pages/definition-page'))
 
 const routes: RouteObject[] = [
   {
@@ -9,8 +12,12 @@ const routes: RouteObject[] = [
     element: <BaseLayout />,
     children: [
       {
-        path: 'definition/english/:word',
-        element: <DefinitionPage />,
+        path: 'definition/english/:query',
+        element: (
+          <Suspense fallback={<SearchSkeleton />}>
+            <LazyDefinitionPage />
+          </Suspense>
+        ),
       },
     ],
     errorElement: (

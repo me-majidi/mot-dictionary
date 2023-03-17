@@ -9,7 +9,7 @@ const SearchInput = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    if (query.length) {
+    if (query) {
       navigate(`/definition/english/${query}`)
     }
   }
